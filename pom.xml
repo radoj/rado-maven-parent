@@ -1,0 +1,59 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+    <groupId>org.radoj</groupId>
+    <artifactId>rado-maven-parent</artifactId>
+    <version>0.1.0</version>
+    <packaging>pom</packaging>
+    <name>Rado Maven Parent Project</name>
+    <url>http://www.radoj.org/maven/parent</url>
+    <organization>
+        <name>Rado Project</name>
+        <url>http://www.radoj.org</url>
+    </organization>
+    <properties>
+        <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+    </properties>
+    <repositories>
+        <repository>
+            <id>radoj-maven-repository</id>
+            <name>Rado Maven Repository</name>
+            <url>https://maven.radoj.org/</url>
+            <layout>default</layout>
+            <releases>
+                <enabled>true</enabled>
+                <updatePolicy>daily</updatePolicy>
+                <checksumPolicy>fail</checksumPolicy>
+            </releases>
+            <snapshots>
+                <enabled>true</enabled>
+                <updatePolicy>always</updatePolicy>
+                <checksumPolicy>fail</checksumPolicy>
+            </snapshots>
+        </repository>
+    </repositories>
+    <distributionManagement>
+        <downloadUrl>https://maven.radoj.org/</downloadUrl>
+        <repository>
+            <id>rado-maven-repository</id>
+            <name>Rado Maven Repository</name>
+            <url>ftps://maven.radoj.org/</url>
+        </repository>
+        <snapshotRepository>
+            <id>rado-maven-repository</id>
+            <name>Rado Maven Repository</name>
+            <url>ftps://maven.radoj.org/</url>
+        </snapshotRepository>
+    </distributionManagement>
+    <build>
+        <extensions>
+            <!-- Enable use of ftp -->
+            <extension>
+                <groupId>org.apache.maven.wagon</groupId>
+                <artifactId>wagon-ftp</artifactId>
+            </extension>
+        </extensions>
+        <pluginManagement>
+        </pluginManagement>
+    </build>
+</project>
